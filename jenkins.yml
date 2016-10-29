@@ -1,0 +1,16 @@
+identidock:
+  build: .
+  ports:
+    - "9090"
+  environment:
+    ENV: PROD 
+  links:
+    - dnsmonster
+    - redis
+
+dnsmonster:
+  image: dnsmonster
+
+redis:
+  image: redis:3.0
+
